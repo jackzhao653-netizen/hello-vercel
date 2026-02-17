@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hello from OpenClaw</title>
+    <style>
+      :root {
+        --bg1: #0b1220;
+        --bg2: #111b34;
+        --card: rgba(255, 255, 255, 0.07);
+        --text: #eaf0ff;
+        --muted: rgba(234, 240, 255, 0.75);
+        --accent: #5eead4;
+      }
+      body {
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+        color: var(--text);
+        background: radial-gradient(1200px 700px at 15% 15%, #1b2a55 0%, transparent 60%),
+          radial-gradient(900px 600px at 85% 35%, #103b3a 0%, transparent 55%),
+          linear-gradient(180deg, var(--bg1), var(--bg2));
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 40px 16px;
+      }
+      .card {
+        width: min(720px, 100%);
+        background: var(--card);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 18px;
+        padding: 28px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+      }
+      h1 {
+        margin: 0 0 8px;
+        font-size: clamp(28px, 5vw, 42px);
+        letter-spacing: -0.02em;
+      }
+      p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.6;
+      }
+      .meta {
+        margin-top: 18px;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .pill {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 12px;
+        padding: 8px 10px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        background: rgba(0, 0, 0, 0.18);
+      }
+      .pill strong { color: var(--accent); font-weight: 600; }
+    </style>
+  </head>
+  <body>
+    <main class="card">
+      <h1>Hello world</h1>
+      <p>Deployed from OpenClaw → GitHub → Vercel.</p>
+      <div class="meta">
+        <div class="pill"><strong>repo</strong>: hello-vercel</div>
+        <div class="pill"><strong>time</strong>: <span id="t"></span></div>
+      </div>
+    </main>
+    <script>
+      document.getElementById('t').textContent = new Date().toISOString();
+    </script>
+  </body>
+</html>
